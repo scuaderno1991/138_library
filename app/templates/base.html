@@ -11,7 +11,7 @@
     <nav>
         <div class="left-links">
             <a href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='/images/SpartanSpirit-gold_[web].png') }}" alt="SpartanSpirit Logo" height="40">
+                <img src="{{ url_for('static', filename='/images/gold.png') }}" alt="SpartanSpirit Logo" height="40">
                 <p>SJSUL</p>
             </a>
             {% if current_user.is_authenticated %}
@@ -23,7 +23,7 @@
         </div>
         <div class="middle">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='/images/SJSU Primary mark_Reversed.png') }}" alt="SpartanSpirit Logo" height="45">
+                <img src="{{ url_for('static', filename='/images/reverse.png') }}" alt="SpartanSpirit Logo" height="45">
             </a>
         </div>
         <div class="right-links">
