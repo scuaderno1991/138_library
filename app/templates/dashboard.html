@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - SJSUL{% endblock %}
+
+{% block content %}
+<div class="container">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    {% if first_name %}
+        <h1>Welcome to SJSUL, {{ first_name }}</h1>
+        {% if user_role == 'librarian' %}
+            <!-- Librarian view -->
+            <p>This is the LIBRARIAN dashboard. You have access to librarian-specific features.</p>
+            <div class="card-container">
+                <div class="card">
+                        <a href="{{ url_for('view_books') }}" class="card-link">
+                        <div class="card-body">
+                            <p class="card-text">View Books</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                        <a href="{{ url_for('view_users') }}" class="card-link">
+                        <div class="card-body">
+                            <p class="card-text">View Users</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% elif user_role == 'student' %}
+            <!-- Student view -->
+            <p>This is the STUDENT dashboard. You have access to student-specific features.</p>
+            <div class="card-container">
+                <div class="card">
+                    <a href="{{ url_for('view_books') }}" class="card-link">
+                        <div class="card-body">
+                            <p class="card-text">View Books</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% elif user_role == 'faculty' %}
+            <!-- Faculty view -->
+            <p>This is the FACULTY dashboard. You have access to faculty-specific features.</p>
+            <div class="card-container">
+                <div class="card">
+                    <a href="{{ url_for('view_books') }}" class="card-link">
+                        <div class="card-body">
+                            <p class="card-text">View Books</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <!-- Default view for unknown roles -->
+            <p>Welcome! Please login to access your dashboard.</p>
+            <div class="card-container">
+                <div class="card">
+                    <a href="{{ url_for('view_books') }}" class="card-link">
+                        <div class="card-body">
+                            <p class="card-text">View Books</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <h1>Welcome to SJSUL, Guest</h1>
+        <p>Please login to access your dashboard.</p>
+        <div class="card-container">
+            <a href="{{ url_for('view_books') }}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">View Books</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

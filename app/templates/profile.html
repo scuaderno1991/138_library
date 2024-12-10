@@ -1,0 +1,36 @@
+<!-- view_profile.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+<h2>Account profile</h2>
+<div class="profile-container">
+  <div class="profile-info">
+    <form>
+      <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" value="{{ form.first_name.data }}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" value="{{ form.last_name.data }}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" value="{{ form.username.data }}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" id="role" value="{{ form.role.data }}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="created_at">Created at:</label>
+        <input type="text" id="created_at" value="{{ form.created_at.data }}" readonly>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

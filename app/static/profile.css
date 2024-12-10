@@ -1,0 +1,58 @@
+.profile-container h2 {
+    text-align: center;
+    /* Center the text horizontally */
+}
+
+.profile-container {
+    /* Adjust the maximum width as needed */
+    max-width: 400px;
+    /* Center the container horizontally and add top margin */
+    margin: 20px auto;
+    padding: 20px;
+    /* Add border around the container */
+    border: 2px solid #333;
+    /* Add border radius for rounded corners */
+    border-radius: 10px;
+    /* Background color for the container */
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    /* Add margin between each form group */
+    margin-bottom: 20px;
+}
+
+input[readonly] {
+    width: calc(100% - 8px);
+    /* Adjust input width to fill remaining space */
+}
+
+.input-label {
+    /* Ensure labels are displayed as blocks */
+    display: inline-block;
+    /* Adjust label width as needed */
+    width: 100px;
+    /* Align label text to the right */
+    text-align: right;
+    /* Add spacing between label and input */
+    margin-right: 10px;
+}
+
+.input-value {
+    /* Ensure input values are displayed as blocks */
+    display: inline-block;
+    /* Adjust input value width to fill remaining space */
+    width: calc(100% - 160px);
+    /* Align input values to the top */
+    vertical-align: top;
+}
+
+input[readonly]:hover {
+    /* Prevent cursor from changing */
+    cursor: no-drop;
+}
+
+.form-group input[type="text"] {
+    /* Center the text within input fields */
+    text-align: center;
+}

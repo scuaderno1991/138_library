@@ -1,0 +1,72 @@
+.form-container h2 {
+    /* Center the text horizontally */
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-actions {
+    padding: 2px 10px;
+    background-color: #ececec;
+    border-radius: 2.5px;
+    border: 1px solid #0f0f0f;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-actions:hover {
+    cursor: default;
+    background-color: #e2e0e0;
+}
+
+.form-container {
+    /* Adjust the maximum width as needed */
+    max-width: 400px;
+    /* Center the container horizontally */
+    margin: 20px auto;
+    padding: 20px;
+    /* Add border around the container */
+    border: 2px solid #333;
+    /* Add border radius for rounded corners */
+    border-radius: 10px;
+    /* Background color for the container */
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    /* Add margin between each form group */
+    margin-bottom: 20px;
+}
+
+.form-control-label {
+    /* Ensure labels are displayed as blocks */
+    display: inline-block;
+    /* Adjust label width as needed */
+    width: 100px;
+    /* Align label text to the right */
+    text-align: right;
+    /* Add spacing between label and input */
+    margin-right: 10px;
+}
+
+.form-control {
+    /* Ensure inputs are displayed as blocks */
+    display: inline-block;
+    /* Adjust input width to fill the remaining space */
+    width: calc(100% - 160px);
+    /* Align inputs to the top */
+    vertical-align: top;
+}
+
+.btn {
+    /* Ensure button is displayed as block */
+    display: block;
+    /* Add margin at the top of the button */
+    margin-top: 20px;
+}

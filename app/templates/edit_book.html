@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit_book.css') }}">
+
+<h2>Edit Book</h2>
+
+<div class="container">
+    <form id="editBookForm" method="post" action="{{ url_for('edit_book', book_id=book.id) }}">
+        {{ form.hidden_tag() }} <!-- Include CSRF token -->
+        <div class="form-group">
+            {{ form.title.label(class="form-control-label") }}
+            {{ form.title(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.author.label(class="form-control-label") }}
+            {{ form.author(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.isbn.label(class="form-control-label") }}
+            {{ form.isbn(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.description.label(class="form-control-label") }}
+            {{ form.description(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="return confirmSave()">Apply Changes</button>
+        <a href="{{ url_for('view_books') }}" class="btn btn-secondary" onclick="return confirmCancel()">Cancel</a>
+    </form>
+</div>
+
+<script>
+    function confirmSave() {
+        return confirm("Are you sure you want to apply changes?");
+    }
+
+    function confirmCancel() {
+        return confirm("Are you sure you want to cancel changes?");
+    }
+</script>
+
+{% endblock %}

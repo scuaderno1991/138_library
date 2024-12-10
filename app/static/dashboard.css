@@ -1,0 +1,44 @@
+/* styles.css */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Center cards horizontally */
+    justify-content: center;
+}
+
+.card {
+    width: 150px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card-body:hover {
+    background-color: #ccc;
+    transition: 0.5s;
+}
+
+.card-link {
+    /* Make the anchor tag a block-level element */
+    display: block;
+    /* Remove underline from the link */
+    text-decoration: none;
+    /* Inherit color from parent */
+    color: inherit;
+}
+
+.card-link:hover {
+    /* Remove underline on hover */
+    text-decoration: none;
+    /* Inherit color on hover */
+    color: inherit;
+}

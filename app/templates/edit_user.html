@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit User - SJSUL{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Edit User</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.first_name.label(class="form-control-label") }}
+                {{ form.first_name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label(class="form-control-label") }}
+                {{ form.last_name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.role.label(class="form-control-label") }}
+                {{ form.role(class="form-control", id="role") }}
+                {% for error in form.role.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="created_at" class="form-control-label">Created at:</label>
+                <input type="text" id="created_at" value="{{ form.created_at.data }}" class="form-control" readonly>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-actions" onclick="return confirmSave()">Apply Changes</button>
+                <a href="{{ url_for('view_users') }}" class="btn btn-actions" onclick="return confirmCancel()">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function confirmSave() {
+            return confirm("Are you sure you want to apply changes?");
+        }
+    
+        function confirmCancel() {
+            return confirm("Are you sure you want to cancel changes?");
+        }
+    </script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='edit_users.css') }}">
+{% endblock %}

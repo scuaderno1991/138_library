@@ -1,0 +1,53 @@
+/* edit_book.css */
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* Align children vertically */
+    align-items: center;
+    /* Center children horizontally */
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Set width */
+    width: 100%;
+}
+
+/* Increase the height of the description box */
+textarea.form-control {
+    /* Adjust the height as needed */
+    height: 200px;
+    /* Set width*/
+    width: 125%;
+}
+
+.btn-primary {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-secondary {
+    padding: 2px 10px;
+    background-color: #ececec;
+    border-radius: 2.5px;
+    border: 1px solid #0f0f0f;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    cursor: default;
+    background-color: #e2e0e0;
+}

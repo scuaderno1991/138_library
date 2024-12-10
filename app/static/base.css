@@ -1,0 +1,43 @@
+/* base.css */
+
+nav {
+    /* SJSU Blue color */
+    background-color: rgb(0, 85, 162);
+    color: #fff;
+    margin-left: -10px;
+    margin-top: -10px;
+    padding: 10px;
+    padding-top: 15px;
+    display: flex;
+    /* Align items on opposite ends */
+    justify-content: space-between;
+    /* Center items vertically */
+    align-items: center;
+    /* Set width to 100% */
+    width: 100%
+}
+
+nav .left-links {
+    display: flex;
+    align-items: center;
+}
+
+nav .right-links {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Hover effect */
+nav a:hover {
+    /* Change background color on hover */
+    color: rgba(255, 255, 255, 0.7);
+    /* Change font color on hover */
+    /* Add smooth transition */
+    transition: color 0.4s ease;
+}

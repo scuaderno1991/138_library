@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SJSUL{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+
+    <nav>
+        <div class="left-links">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='/images/SpartanSpirit-gold_[web].png') }}" alt="SpartanSpirit Logo" height="40">
+                <p>SJSUL</p>
+            </a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('home') }}">Dashboard</a>
+            {% else %}
+                <a href="{{ url_for('home') }}">Home</a>
+            {% endif %}
+            <a href="{{ url_for('view_books') }}">Books</a>
+        </div>
+        <div class="middle">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='/images/SJSU Primary mark_Reversed.png') }}" alt="SpartanSpirit Logo" height="45">
+            </a>
+        </div>
+        <div class="right-links">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
